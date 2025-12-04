@@ -1,23 +1,10 @@
 import "./App.css";
-import { Modal } from "./shared/ui/Modal";
-import { useModal } from "./shared/lib/hooks/useModal";
+import { HomePage } from "./pages/HomePage/HomePage";
 
 function App() {
-  const { isOpen, open, close } = useModal();
-
   return (
     <>
-      <button onClick={open}></button>
-      {isOpen && (
-        <Modal
-          isOpen={isOpen}
-          onClose={close}
-          closeOnEscape
-          closeOnOverlayClick
-        >
-          asdfasdf
-        </Modal>
-      )}
+      <HomePage></HomePage>
     </>
   );
 }
