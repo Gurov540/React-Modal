@@ -1,6 +1,10 @@
 import React from "react";
-import styles from "./HomePage.module.css";
+import { Header } from "../../widgets/Header";
 
-export default function HomePage() {
-  return {};
-}
+export const HomePage = () => {
+  return (
+    <>
+      <Header></Header>
+    </>
+  );
+};
