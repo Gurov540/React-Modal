@@ -1,7 +1,7 @@
 import React from "react";
-import styles from "./Modal.module.css";
+import styles from "./Input.module.css";
 
-interface ModalProps {
+interface InputProps {
   children: React.ReactNode;
   label?: string;
   color?: "primary" | "success";
@@ -9,7 +9,7 @@ interface ModalProps {
   fullWidth?: boolean;
 }
 
-export const Button: React.FC<ModalProps> = ({
+export const Input: React.FC<InputProps> = ({
   children,
   color = "primary",
   size = "medium",
