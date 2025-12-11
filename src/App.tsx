@@ -1,10 +1,12 @@
 import "./App.css";
-import { HomePage } from "./pages/HomePage/HomePage";
+import { Header } from "./widgets/Header";
+import { ErrorModal } from "./shared/ui/ErrorModal";
 
 function App() {
   return (
     <>
-      <HomePage></HomePage>
+      <ErrorModal>Error</ErrorModal>
+      <Header></Header>
     </>
   );
 }
