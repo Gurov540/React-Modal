@@ -2,11 +2,14 @@ import React from "react";
 import styles from "./Header.module.css";
 import { Button } from "../../shared/ui/Button";
 import { Logo } from "../../shared/ui/Logo";
-import { Modal } from "../../shared/ui/Modal";
-import { useModal } from "../../shared/lib/hooks/useModal";
+import { useModalControl } from "../../shared/lib/hooks/useModalControl/useModalControl";
+import { ModalNames } from "../../shared/lib/hooks/useModalControl/modalNames";
 
 export const Header: React.FC = () => {
-  const { isOpen, open, close } = useModal();
+  const {
+    options: { openModal },
+  } = useModalControl();
+
   return (
     <>
       <header className={styles.header}>
@@ -14,20 +17,22 @@ export const Header: React.FC = () => {
           <Logo />
         </div>
         <nav className={styles.nav}>
-          <Button onClick={open} color="primary" size="medium">
+          <Button
+            onClick={() => openModal(ModalNames.error)}
+            color="primary"
+            size="medium"
+          >
             Login
           </Button>
-          <Button color="success" size="medium">
+          <Button
+            onClick={() => openModal(ModalNames.register)}
+            color="success"
+            size="medium"
+          >
             Registration
           </Button>
         </nav>
       </header>
-      <Modal isOpen={isOpen} onClose={close} closeOnEscape closeOnOverlayClick>
-        <div className={styles.modalActions}>
-          <button onClick={close}>Закрыть</button>
-          <button>Добавить в корзину</button>
-        </div>
-      </Modal>
     </>
   );
 };
