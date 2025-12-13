@@ -5,7 +5,7 @@ import { ErrorModal } from "./shared/ui/ErrorModal";
 function App() {
   return (
     <>
-      <ErrorModal>Error</ErrorModal>
+      <ErrorModal>какойто текст</ErrorModal>
       <Header></Header>
     </>
   );
