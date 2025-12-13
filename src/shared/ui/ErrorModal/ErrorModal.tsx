@@ -1,4 +1,5 @@
 import type { ReactNode, ComponentPropsWithRef } from "react";
+import { useEffect, useRef } from "react";
 import { useModalControl } from "../../lib/hooks/useModalControl/useModalControl";
 import styles from "./Modal.module.css";
 
@@ -9,23 +10,30 @@ interface ModalProps extends Omit<DialogProps, "open" | "onClose"> {
 }
 
 export const ErrorModal = ({ children }: ModalProps) => {
+  const dialogRef = useRef<HTMLDialogElement>(null);
+
   const {
     isErrorModal,
     options: { closeModal },
   } = useModalControl();
 
+  useEffect(() => {
+    const dialog = dialogRef.current;
+    if (!dialog) return;
+
+    if (isErrorModal && !dialog.open) {
+      dialog.showModal();
+    }
+
+    if (!isErrorModal && dialog.open) {
+      dialog.close();
+    }
+  }, [isErrorModal]);
+
   return (
-    <dialog className={styles.modal} open={isErrorModal} onClose={closeModal}>
+    <dialog ref={dialogRef} className={styles.modal} onClose={closeModal}>
       <div className={styles.header}>
-        <button
-          type="button"
-          className={styles.close}
-          aria-label="Закрыть модальное окно"
-          onClick={closeModal}
-        >
-          ×
-        </button>
-        <h1>ERROR</h1>
+        <button onClick={closeModal}>×</button>
       </div>
       <div className={styles.content}>{children}</div>
     </dialog>
