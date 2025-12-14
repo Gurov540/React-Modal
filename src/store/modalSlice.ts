@@ -7,16 +7,12 @@ import {
 
 export type ModalSliceType<
   T extends keyof typeof ModalNames = keyof typeof ModalNames
-> = T extends infer K
-  ? K extends T
-    ? {
-        modalData: {
-          name: K;
-          value: SpecificModalDataType[K];
-        };
-      }
-    : never
-  : never;
+> = {
+  modalData: {
+    name: T;
+    value: SpecificModalDataType[T];
+  };
+};
 
 const initialState: ModalSliceType = {
   modalData: { name: ModalNames.reset, value: undefined },
