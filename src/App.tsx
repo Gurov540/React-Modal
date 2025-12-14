@@ -1,11 +1,13 @@
 import "./App.css";
 import { Header } from "./widgets/Header";
-import { ErrorModal } from "./shared/ui/ErrorModal";
+import { LoginModal } from "./features/auth/ui/LoginModal/Loginmodal";
+import { RegisterModal } from "./features/auth/ui/RegisterModal/RegisterModal";
 
 function App() {
   return (
     <>
-      <ErrorModal>какойто текст</ErrorModal>
+      <RegisterModal></RegisterModal>
+      <LoginModal></LoginModal>
       <Header></Header>
     </>
   );
