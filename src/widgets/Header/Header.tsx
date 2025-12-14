@@ -18,7 +18,7 @@ export const Header: React.FC = () => {
         </div>
         <nav className={styles.nav}>
           <Button
-            onClick={() => openModal(ModalNames.error)}
+            onClick={() => openModal(ModalNames.login)}
             color="primary"
             size="medium"
           >
