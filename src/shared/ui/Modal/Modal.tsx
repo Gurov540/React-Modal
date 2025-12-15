@@ -24,16 +24,31 @@ export const Modal = ({ isOpen, onClose, children }: ModalProps) => {
   }, [isOpen]);
 
   return (
-    <dialog ref={dialogRef} className={styles.modal} onClose={onClose}>
-      <button
-        className={styles.close}
-        onClick={onClose}
-        aria-label="Close modal"
-      >
-        ×
-      </button>
+    <dialog
+      ref={dialogRef}
+      className={styles.modal}
+      onClose={onClose}
+      onClick={(e) => {
+        if (e.target === e.currentTarget) {
+          onClose();
+        }
+      }}
+      onCancel={(e) => {
+        e.preventDefault();
+        onClose();
+      }}
+    >
+      <div className={styles.content}>
+        <button
+          className={styles.close}
+          onClick={onClose}
+          aria-label="Close modal"
+        >
+          ×
+        </button>
 
-      <div className={styles.content}>{children}</div>
+        {children}
+      </div>
     </dialog>
   );
 };
