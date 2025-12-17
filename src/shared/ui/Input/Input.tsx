@@ -1,22 +1,29 @@
 import React from "react";
 import styles from "./Input.module.css";
 
-interface InputProps {
-  children: React.ReactNode;
+interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   label?: string;
   color?: "primary" | "success";
-  size?: "small" | "medium" | "large";
+  inputSize?: "small" | "medium" | "large";
   fullWidth?: boolean;
 }
 
 export const Input: React.FC<InputProps> = ({
-  children,
   color = "primary",
-  size = "medium",
+  inputSize = "medium",
+  fullWidth = false,
+  className,
+  ...props
 }) => {
-  return (
-    <input className={`${styles.input} ${styles[color]} ${styles[size]}`}>
-      {children}
-    </input>
-  );
+  const inputClasses = [
+    styles.input,
+    styles[color],
+    styles[inputSize],
+    fullWidth && styles.fullWidth,
+    className,
+  ]
+    .filter(Boolean)
+    .join(" ");
+
+  return <input className={inputClasses} {...props} />;
 };
