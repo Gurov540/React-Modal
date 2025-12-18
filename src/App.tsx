@@ -1,14 +1,14 @@
 import "./App.css";
-import { Header } from "./widgets/Header";
-import { LoginModal } from "./features/auth/ui/LoginModal/Loginmodal";
+import { LoginModal } from "./features/auth/ui/LoginModal";
 import { RegisterModal } from "./features/auth/ui/RegisterModal/RegisterModal";
+import { HomePage } from "./pages/HomePage/HomePage";
 
 function App() {
   return (
     <>
       <RegisterModal></RegisterModal>
       <LoginModal></LoginModal>
-      <Header></Header>
+      <HomePage></HomePage>
     </>
   );
 }
