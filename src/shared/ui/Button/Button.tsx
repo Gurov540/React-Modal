@@ -1,22 +1,22 @@
 import React from "react";
 import styles from "./Button.module.css";
 
-interface ButtonProps {
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
   color?: "primary" | "success";
-  size?: "small" | "medium" | "large";
+  buttonSize?: "small" | "medium" | "large";
   onClick?: () => void;
 }
 
 export const Button: React.FC<ButtonProps> = ({
   children,
   color = "primary",
-  size = "medium",
+  buttonSize = "medium",
   onClick,
 }) => {
   return (
     <button
-      className={`${styles.button} ${styles[color]} ${styles[size]}`}
+      className={`${styles.button} ${styles[color]} ${styles[buttonSize]}`}
       onClick={onClick}
     >
       {children}
