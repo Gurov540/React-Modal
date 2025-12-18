@@ -1,5 +1,8 @@
-import { Modal } from "../../../../shared/ui/Modal/Modal";
 import { useModalControl } from "../../../../shared/lib/hooks/useModalControl/useModalControl";
+import styles from "./RegisterModal.module.css";
+import { Modal } from "../../../../shared/ui/Modal/Modal";
+import { Input } from "../../../../shared/ui/Input";
+import { Button } from "../../../../shared/ui/Button";
 
 export const RegisterModal = () => {
   const {
@@ -13,11 +16,11 @@ export const RegisterModal = () => {
     <Modal isOpen={isOpen} onClose={closeModal}>
       <h2>Регистрация</h2>
 
-      <form>
-        <input type="email" placeholder="Email" />
-        <input type="password" placeholder="Пароль" />
+      <form className={styles.registerForm}>
+        <Input type="email" placeholder="Login" fullWidth></Input>
+        <Input type="password" placeholder="password" fullWidth></Input>
 
-        <button type="submit">регистрация</button>
+        <Button type="submit">Войти</Button>
       </form>
     </Modal>
   );
