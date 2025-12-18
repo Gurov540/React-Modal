@@ -20,14 +20,14 @@ export const Header: React.FC = () => {
           <Button
             onClick={() => openModal(ModalNames.login)}
             color="primary"
-            size="medium"
+            buttonSize="medium"
           >
             Login
           </Button>
           <Button
             onClick={() => openModal(ModalNames.register)}
             color="success"
-            size="medium"
+            buttonSize="medium"
           >
             Registration
           </Button>
