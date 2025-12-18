@@ -1,0 +1,35 @@
+.heroSection {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 992px;
+  min-width: 65vw;
+  max-width: 100%;
+  margin-bottom: 8rem;
+}
+
+.heading {
+  font-size: 3.75rem;
+  font-weight: 800;
+  line-height: 1;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.heading span {
+  color: #4361ee;
+}
+
+.description {
+  color: #4b5563;
+  font-size: 1.25rem;
+  font-weight: normal;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
