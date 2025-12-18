@@ -3,4 +3,6 @@ body {
   height: 100vh;
   margin: 0;
   background-color: #fff;
+  font-family: -Apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
 }
