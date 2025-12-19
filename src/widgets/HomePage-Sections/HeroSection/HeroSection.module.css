@@ -2,9 +2,6 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  width: 992px;
-  min-width: 65vw;
-  max-width: 100%;
   margin-bottom: 8rem;
 }
 
