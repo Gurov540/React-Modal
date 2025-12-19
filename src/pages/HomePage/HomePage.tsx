@@ -7,7 +7,9 @@ export const HomePage = () => {
   return (
     <div className={styles.homePage}>
       <Header></Header>
-      <HeroSection></HeroSection>
+      <div className="container">
+        <HeroSection></HeroSection>
+      </div>
     </div>
   );
 };
