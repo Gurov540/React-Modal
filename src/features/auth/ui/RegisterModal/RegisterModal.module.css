@@ -3,3 +3,7 @@
   flex-direction: column;
   gap: 10px;
 }
+
+.registerForm Button {
+  margin-top: 20px;
+}
