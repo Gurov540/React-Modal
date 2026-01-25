@@ -19,8 +19,9 @@ export const RegisterModal = () => {
       <form className={styles.registerForm}>
         <Input type="email" placeholder="Login" fullWidth></Input>
         <Input type="password" placeholder="password" fullWidth></Input>
+        <Input type="password" placeholder="enter password" fullWidth></Input>
 
-        <Button type="submit">Войти</Button>
+        <Button type="submit">Регистрация</Button>
       </form>
     </Modal>
   );
