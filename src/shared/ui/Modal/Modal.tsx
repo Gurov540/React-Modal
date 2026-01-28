@@ -9,7 +9,6 @@ interface ModalProps {
 
 export const Modal = ({ isOpen, onClose, children }: ModalProps) => {
   const dialogRef = useRef<HTMLDialogElement>(null);
-
   useEffect(() => {
     const dialog = dialogRef.current;
     if (!dialog) return;
