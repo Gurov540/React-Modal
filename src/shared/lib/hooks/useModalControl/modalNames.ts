@@ -3,7 +3,7 @@ export const ModalNames = {
   loading: "loading" as const,
   success: "success" as const,
   error: "error" as const,
-  warning: "warning" as const,
+  addTask: "addTask" as const,
   login: "login" as const,
   register: "register" as const,
 };
@@ -16,7 +16,7 @@ export type SpecificModalDataType = ModalNameChecker<{
   loading: void;
   success: string;
   error: string;
-  warning: void;
+  addTask: void;
   login: string;
   register: string;
 }>;
